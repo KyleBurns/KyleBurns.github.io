@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+
+<body>
+	<form>
+		Password:<br>
+		<input type="text" name="pass"><br>
+		<button id="pass">Submit</button>
+	</form>
+	<div id="content"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/aes-min.js"></script>
+	<script>
+		var x = location.search.split('pass=')[1];
+		var sum = 0;
+		for(var i=0;i<x.length;i++){
+			sum += x.charCodeAt(i);}
+		if(sum == 164) {
+			document.getElementById("content").style.color = "green";
+			document.getElementById("content").innerHTML = "ACCESS GRANTED";
+		}
+		else {
+			document.getElementById("content").style.color = "red";
+			document.getElementById("content").innerHTML = "ACCESS DENIED";		
+		}
+	</script>
+</body>
+</html>
